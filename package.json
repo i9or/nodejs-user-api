@@ -1,0 +1,31 @@
+{
+  "name": "nodejs-user-api",
+  "version": "0.0.1",
+  "description": "NodeJS User REST API",
+  "private": true,
+  "engines": {
+    "node": ">=20.9.0 <21",
+    "npm": ">=10.2.3 <11"
+  },
+  "main": "index.js",
+  "scripts": {
+    "prepare": "node -e \"try { require('husky').install() } catch (e) {if (e.code !== 'MODULE_NOT_FOUND') throw e}\"",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "tsx watch --clear-screen=false ./src/main.ts",
+    "start:prod": "cross-env NODE_ENV=production tsx ./src/main.ts"
+  },
+  "author": "Igor <dont@bzzr.me> (https://ignorethis.page/)",
+  "license": "MIT",
+  "devDependencies": {
+    "husky": "8.0.3",
+    "lint-staged": "15.1.0",
+    "prettier": "3.1.0",
+    "typescript": "5.3.2"
+  },
+  "dependencies": {
+    "tsx": "4.5.0"
+  },
+  "lint-staged": {
+    "*": "prettier --ignore-unknown --write"
+  }
+}
