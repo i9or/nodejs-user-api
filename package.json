@@ -1,0 +1,47 @@
+{
+  "name": "nodejs-user-api",
+  "version": "0.0.1",
+  "description": "NodeJS User REST API",
+  "private": true,
+  "engines": {
+    "node": ">=20.9.0 <21",
+    "npm": ">=10.2.3 <11"
+  },
+  "main": "index.js",
+  "scripts": {
+    "prepare": "node -e \"try { require('husky').install() } catch (e) {if (e.code !== 'MODULE_NOT_FOUND') throw e}\"",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "tsx watch --clear-screen=false ./src/main.ts",
+    "start:prod": "tsx ./src/main.ts",
+    "seed": "tsx ./scripts/seed.ts"
+  },
+  "author": "Igor <dont@bzzr.me> (https://ignorethis.page/)",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/bcrypt": "5.0.2",
+    "@types/body-parser": "1.19.5",
+    "@types/node": "20.10.0",
+    "@types/pg": "8.10.9",
+    "husky": "8.0.3",
+    "lint-staged": "15.1.0",
+    "prettier": "3.1.0",
+    "typescript": "5.3.2"
+  },
+  "dependencies": {
+    "@tinyhttp/app": "2.2.1",
+    "@tinyhttp/cors": "2.0.0",
+    "bcrypt": "5.1.1",
+    "body-parser": "1.20.2",
+    "dotenv": "16.3.1",
+    "helmet": "7.1.0",
+    "kysely": "0.26.3",
+    "pg": "8.11.3",
+    "pino": "8.16.2",
+    "pino-http": "8.5.1",
+    "pino-pretty": "10.2.3",
+    "tsx": "4.5.0"
+  },
+  "lint-staged": {
+    "*": "prettier --ignore-unknown --write"
+  }
+}
